@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/guide-colors.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <title>Jogo da forca</title>
+</head>
+<body>
+    <header>
+       <div id="logo">
+            <img src="assets/forca-logo.svg" alt="">
+            <h1>Jogo da
+                <div>Forca</div>    
+            </h1>
+       </div>
+    </header>
+    <main>
+        <div id="start">
+            <div id="divNewGame"><button id="newGame">Começar jogo</button></div>
+            <button id="newWord">Adicionar palavra</button>
+        </div>
+
+        <div id="insertWord">
+            <textarea name="" placeholder="Digite uma palavra ou frase."></textarea>
+            <p>
+                <img src="assets/bi_exclamation-circle-fill.svg" alt="">
+                Máx. de 8 letras.
+            </p>
+            <button id="save" class="buttonDark">Salvar</button>
+            <button id="cancel" class="buttonLight">Cancelar</button>
+        </div>
+
+        <div id="forca">
+            <canvas width="294" height="360"></canvas>
+            <div id="resultado"></div>
+            <div id="input"></div>
+            <div id="wrongLetters"></div>
+            <div id="buttons">
+                <button id="newGame2" class="buttonDark">Novo Jogo</button>
+                <button id="desistir" class="buttonLight">Desistir</button>
+            </div>
+        </div>
+
+
+        <p id="help"></p>
+    </main>
+
+    
+
+    <footer>
+        <p>Feito com <span>♥</span> por <a href="https://github.com/joellhss">Joel Sousa</a>.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
