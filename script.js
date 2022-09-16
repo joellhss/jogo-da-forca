@@ -36,6 +36,30 @@ newGame.addEventListener("click", e=> {
     let LetrasErradas = document.getElementById("wrongLetters")
     let body = document.querySelector("body")
 
+    function ocultaLogo(sim_nao) {
+        let logo = document.querySelector("header")
+        let main = document.querySelector("main")
+        switch (sim_nao) {
+            case "sim":
+                logo.style.display = "none"
+                main.style.minHeight = "600px"
+                break;
+            case "não":
+                logo.style.display = "flex"
+                main.style.minHeight = "400px"
+                break;
+        }
+    }
+
+    console.log(body.clientWidth)
+
+    if (body.clientWidth < 415) {
+        ocultaLogo("sim")
+    } else {
+        ocultaLogo("não")
+    }
+    
+
     buttonNovoJogo.setAttribute("disabled", "true")
 
     buttonDesistir.addEventListener ("click", desistir)
@@ -64,12 +88,14 @@ newGame.addEventListener("click", e=> {
     
     function desistir() {
         button(1)
+        ocultaLogo("não")
     }
 
     function novoJogo() {
         button(2)
         resultado.style.display = "none"
         resultado.innerText = ""
+        ocultaLogo("não")
     }
 
     function button(x) {
@@ -212,7 +238,7 @@ function alternaTela(numero_tela) {
             break
         case 2:
             start.style.display = "none";
-            insertWord.style.display = "block";
+            insertWord.style.display = "flex";
             startForca.style.display = "none";
             break
         case 3:

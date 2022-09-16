@@ -1,0 +1,140 @@
+@media screen and (max-width: 1030px) {
+    header {
+        padding: 40px 0 0 40px;
+        display: flex;
+        
+    }
+    
+    #logo {
+        margin-left: 0;
+    }
+
+
+
+}
+
+@media screen and (max-width: 414px) {
+    header {
+        padding: 0;
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo {
+        margin-left: 0;
+    }
+
+    #logo h1 {
+        font-size: 28px;
+    }
+    
+    #logo h1 div{
+        font-size: 42px;
+        margin-top: -12px;
+        color: var(--darkBlue300);
+    }
+    
+    header img {
+        margin: 0 14px;
+        width: 80px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0;
+        min-height: 400px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #start {
+        height: 667px;
+    }
+    #newWord {
+        height: 67px;
+        width: 300px;
+    }
+
+
+    #insertWord {
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        gap: 10px;
+    }
+
+    textarea {
+        width: 375px;
+        padding: 0 10px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    #help {
+        top: 90%;
+    }
+
+    canvas {
+        position: static;
+        width: 160px;
+        top: 0px;
+        height: auto;
+    }
+
+    #forca {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        padding: 0;
+    }
+
+    #resultado {
+        height: 65px;
+        top: 60px;
+    }
+
+    @keyframes fontSize {
+        from {
+            font-size: 0px;
+        }
+        to {
+            font-size: 50px;
+        }
+    }
+
+    #buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    #input{
+        margin-top: 30px;
+    }
+
+    .letter {
+        margin: 0;
+        padding: 0;
+        height: 70px;
+        width: 50px;
+        font-size: 40px;
+    }
+
+    #wrongLetters {
+        height: 50px;
+    }
+
+    .buttonDark {
+        width: 300px;
+        height: 60px;
+    }
+
+    .buttonLight {
+        width: 300px;
+        height: 60px;
+    }
+}
