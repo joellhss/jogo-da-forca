@@ -65,14 +65,6 @@ newGame.addEventListener("click", e=> {
     } else {
         ocultaLogo("não")
     }
-    
-    body.addEventListener("click", e=> {
-        if (e.pointerType === "touch") {
-            adaptarMobile.style.display = "block"
-        } else {
-            adaptarMobile.style.display = "none"
-        }
-    })
 
     buttonNovoJogo.setAttribute("disabled", "true")
     buttonDesistir.addEventListener ("click", desistir)
