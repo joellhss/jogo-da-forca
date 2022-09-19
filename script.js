@@ -21,7 +21,7 @@ function textToArray(x) {
 
 function msgAjuda(texto, tempo, cor) {
     
-    let help = document.getElementById("help")
+    let help = document.getElementById("help-content")
     help.innerHTML = texto
     help.style.color = cor
     
@@ -35,23 +35,30 @@ newGame.addEventListener("click", e=> {
     let buttonDesistir = document.getElementById("desistir")
     let LetrasErradas = document.getElementById("wrongLetters")
     let body = document.querySelector("body")
+    let adaptarMobile = document.getElementById("adaptarMobile")
+    let inputMobile = document.getElementById("inputMobile")
 
     function ocultaLogo(sim_nao) {
         let logo = document.querySelector("header")
         let main = document.querySelector("main")
+        let help = document.getElementById("help")
         switch (sim_nao) {
             case "sim":
                 logo.style.display = "none"
                 main.style.minHeight = "600px"
+                help.style.width = "100px"
+                help.style.left = "25px"
+                help.style.top = "80px"
                 break;
             case "não":
                 logo.style.display = "flex"
                 main.style.minHeight = "400px"
+                help.style.width = "100%"
+                help.style.left = "0px"
+                help.style.top = "90%"
                 break;
         }
     }
-
-    console.log(body.clientWidth)
 
     if (body.clientWidth < 415) {
         ocultaLogo("sim")
@@ -59,11 +66,32 @@ newGame.addEventListener("click", e=> {
         ocultaLogo("não")
     }
     
+    body.addEventListener("click", e=> {
+        if (e.pointerType === "touch") {
+            adaptarMobile.style.display = "block"
+        } else {
+            adaptarMobile.style.display = "none"
+        }
+    })
 
     buttonNovoJogo.setAttribute("disabled", "true")
-
     buttonDesistir.addEventListener ("click", desistir)
-    body.addEventListener("keydown", escutaTecla)
+
+    body.addEventListener("click", e => {
+        if (e.target.localName === "p" || e.target.localName === "path" || e.target.localName === "svg") {
+                body.removeEventListener("keydown", escutaTecla)
+                adaptarMobile.addEventListener("click", e => {
+                inputMobile.focus()
+                inputMobile.addEventListener("keydown", escutaTecla)
+            })
+        } else {
+            inputMobile.removeEventListener("keydown", escutaTecla)
+            body.addEventListener("keydown", escutaTecla)
+        }
+    })
+
+    
+    
 
     let textArray = textToArray(text)
     let arrayVerificador = []
@@ -196,12 +224,20 @@ textArea.addEventListener("blur", e => {
 })
 
 saveText.addEventListener("click", e => {  
+   
+   if (textArea.value !== "" && textArea.value.length <= 10) {
     text = textArea.value;
     alternaTela(1)
     enableButton()
-
     msgAjuda("Tudo pronto para começar!", 3000, "var(--lightBlue500)")
     textArea.value = ""
+   } else if (textArea.value !== "" && textArea.value.length > 10) {
+    msgAjuda("Máximo de 10 letras!", 3000, "var(--lightBlue500)")
+   } else {
+    msgAjuda("O campo não pode estar vazio!", 3000, "var(--lightBlue500)")
+   }
+
+   
 })
 
 function enableButton() {
