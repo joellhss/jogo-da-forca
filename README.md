@@ -3,7 +3,7 @@ Crie seu próprio jogo da forca com Javascript</h1>
 
 <div align="center">
   <h3>
-    <a href="https://joellhss.github.io/challenge-one-sprint-01/">
+    <a href="https://joellhss.github.io/jogo-da-forca/">
         Página demonstrativa
     </a>
   </h3>
@@ -20,9 +20,9 @@ Crie seu próprio jogo da forca com Javascript</h1>
 
 ## Overview
 
-![screenshot](https://github.com/joellhss/challenge-one-sprint-01/blob/main/assets/Captura%20de%20tela%20de%202022-08-08%2019-10-54.png?raw=true)
+![screenshot](https://github.com/joellhss/jogo-da-forca/blob/master/assets/Captura%20de%20tela%20de%202022-09-19%2015-45-15.png?raw=true)
 
-Este projeto foi desenvolvido com o objetivo de cumprir o desafio "Challenge ONE Sprint 01" e de praticar os conteúdos aprendidos na trilha 1: "Iniciante em Programação T3 - ONE".
+Este projeto foi desenvolvido com o objetivo de cumprir o desafio "Challenge ONE Sprint 02" e de praticar os conteúdos aprendidos na trilha 1: "Iniciante em Programação T3 - ONE".
 
 ### Built With
 
